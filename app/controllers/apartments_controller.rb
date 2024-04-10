@@ -27,6 +27,8 @@ class ApartmentsController < ApplicationController
     apartment = Apartment.find(params[:id])
     if apartment.destroy
       render json: {}, status: 204
+    else 
+      render json: {}, status: 422
     end
   end
 
