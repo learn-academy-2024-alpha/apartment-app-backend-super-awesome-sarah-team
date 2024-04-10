@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Apartments", type: :request do
-  # creates a global user variable to test the request specs
   let(:user) { User.create(
       email: 'test@example.com',
       password: 'password',
