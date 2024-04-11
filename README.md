@@ -1,23 +1,37 @@
-# Apartment App 4/9/2024
+# Apartment App
 
-### Purpose
+April 2024
 
-Decoupled React and Rails API application.
+Apartment App is a decoupled React and Rails API. It is built with a PostgreSQL database featuring user authentication and authorization using Devise and JWT.
 
-As a developer, I have been commissioned to create an application that lists apartments available for rent. As a visiting user of the application, I can see a list of all available apartments. I can click on an apartment listing and see more information about that apartment. If I want to list an apartment for rent, I can create an account and log into the application. If I am logged in, I can add a new apartment. As a logged in user, I can see a list of all my apartments with the ability to edit or delete my listings.
+### 📚 Overall Story
 
-### App Setup
+Apartment App lists apartments available for rent. A visiting user of the application can see a list of all available apartments. A visiting user can select an apartment listing and see more information about that apartment. In order to list an apartment for rent, a user can create an account and log into the application. When logged in, a user can add an apartment to the list. Logged in users can see a list of all their apartments with the ability to edit or delete their listings.
 
-- rails new apartment-app-backend --api -d postgresql -T
-- run the app with `rails s`
+### 💻 Versions
 
-### User Auth
+- Ruby 3.2.0
+- Rails 7.0.8.1
+- PSQL 14.10
 
-- Devise
-- JWT
+### ⚡️ Getting Started
 
-### Dependencies
+- Clone the repository
+- Install dependencies by running `bundle`
+- Create, migrate, and see the database `rails db:setup`
 
+### 🏁 Start the App
+
+Start the server by running `rails s`
+
+### 🚗 Testing
+
+Execute the testing suite by running `rspec spec`
+
+### 🔗 Historical Commands and Dependencies
+
+- The app was created with this command:
+  - `rails new apartment-app-backend --api -d postgresql -T`
 - CORS
 - JWT
 - RSpec

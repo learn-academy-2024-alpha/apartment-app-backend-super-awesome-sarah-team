@@ -73,22 +73,18 @@ RSpec.describe "Apartments", type: :request do
 
   describe 'PATCH #update' do
     it 'makes valid updates to an existing apartment with http success' do
-      post apartments_path, params: { 
-        apartment: { 
-          street: 'Test Street',
-          unit: 'Test Unit',
-          city: 'Test City',
-          state: 'Test State',
-          square_footage: 1000,
-          price: '$1000',
-          bedrooms: 1,
-          bathrooms: 1,
-          pets: 'yes',
-          image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
-          user_id: user.id
-        } 
-      }
-      apartment = Apartment.where(street: 'Test Street').first
+      apartment = user.apartments.create(
+        street: 'Test Street',
+        unit: 'Test Unit',
+        city: 'Test City',
+        state: 'Test State',
+        square_footage: 1000,
+        price: '$1000',
+        bedrooms: 1,
+        bathrooms: 1,
+        pets: 'yes',
+        image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg'
+      )
       patch apartment_path(apartment), params: { 
         apartment: { 
           street: 'Updated Test Street',
@@ -104,28 +100,23 @@ RSpec.describe "Apartments", type: :request do
           user_id: user.id
         } 
       }
-
       apartment = Apartment.where(street: 'Updated Test Street').first
       expect(response).to have_http_status(200)
       expect(apartment).to be_valid
     end
     it 'makes invalid updates to an existing apartment' do
-      post apartments_path, params: { 
-        apartment: { 
-          street: 'Test Street',
-          unit: 'Test Unit',
-          city: 'Test City',
-          state: 'Test State',
-          square_footage: 1000,
-          price: '$1000',
-          bedrooms: 1,
-          bathrooms: 1,
-          pets: 'yes',
-          image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
-          user_id: user.id
-        } 
-      }
-      apartment = Apartment.where(street: 'Test Street').first
+      apartment = user.apartments.create(
+        street: 'Test Street',
+        unit: 'Test Unit',
+        city: 'Test City',
+        state: 'Test State',
+        square_footage: 1000,
+        price: '$1000',
+        bedrooms: 1,
+        bathrooms: 1,
+        pets: 'yes',
+        image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg'
+      )
       patch apartment_path(apartment), params: { 
         apartment: { 
           street: nil,
@@ -149,27 +140,22 @@ RSpec.describe "Apartments", type: :request do
 
   describe 'DELETE #destroy' do
     it 'deletes the apartment' do
-      post apartments_path, params: { 
-        apartment: { 
-          street: 'Test Street',
-          unit: 'Test Unit',
-          city: 'Test City',
-          state: 'Test State',
-          square_footage: 1000,
-          price: '$1000',
-          bedrooms: 1,
-          bathrooms: 1,
-          pets: 'yes',
-          image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
-          user_id: user.id
-        } 
-      }
-      apartment = Apartment.where(street: 'Test Street').first
+      apartment = user.apartments.create(
+        street: 'Test Street',
+        unit: 'Test Unit',
+        city: 'Test City',
+        state: 'Test State',
+        square_footage: 1000,
+        price: '$1000',
+        bedrooms: 1,
+        bathrooms: 1,
+        pets: 'yes',
+        image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg'
+      )
       expect {
         delete apartment_path(apartment)
       }.to change(Apartment, :count).by(-1)
       expect(response).to have_http_status(204)
     end
   end
-
 end
