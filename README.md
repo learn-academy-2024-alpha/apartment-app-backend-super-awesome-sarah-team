@@ -28,10 +28,18 @@ Start the server by running `rails s`
 
 Execute the testing suite by running `rspec spec`
 
+### 🗄️ Resources
+
+A few of the resources and commands I found to be helpful during this process.
+
+- [Devise + Rails API Session Bug](https://github.com/waiting-for-dev/devise-jwt/issues/235)
+- [Devise JWT](https://github.com/waiting-for-dev/devise-jwt/blob/main/README.md)
+- `Rails.application.credentials.jwt_secret_key`
+
 ### 🔗 Historical Commands and Dependencies
 
 - The app was created with this command:
   - `rails new apartment-app-backend --api -d postgresql -T`
 - CORS
-- JWT
+- JWT - DenyList revocation strategy
 - RSpec
