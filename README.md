@@ -14,6 +14,18 @@ Apartment App lists apartments available for rent. A visiting user of the applic
 - Rails 7.0.8.1
 - PSQL 14.10
 
+### 🗄️ Resources
+
+- [API-only app with Devise and JWT for authentication](https://sdrmike.medium.com/rails-7-api-only-app-with-devise-and-jwt-for-authentication-1397211fb97c)
+
+### 🔗 Historical Commands and Dependencies
+
+- The app was created with this command:
+  - `rails new apartment-app-backend --api -d postgresql -T`
+- CORS
+- JWT - JTI matcher revocation strategy
+- RSpec
+
 ### ⚡️ Getting Started
 
 - Clone the repository
@@ -27,11 +39,3 @@ Start the server by running `rails s`
 ### 🚗 Testing
 
 Execute the testing suite by running `rspec spec`
-
-### 🔗 Historical Commands and Dependencies
-
-- The app was created with this command:
-  - `rails new apartment-app-backend --api -d postgresql -T`
-- CORS
-- JWT
-- RSpec
