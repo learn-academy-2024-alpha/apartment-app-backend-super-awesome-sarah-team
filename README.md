@@ -16,7 +16,12 @@ Apartment App lists apartments available for rent. A visiting user of the applic
 
 ### 🗄️ Resources
 
+A few of the resources and commands I found to be helpful during this process.
+
 - [API-only app with Devise and JWT for authentication](https://sdrmike.medium.com/rails-7-api-only-app-with-devise-and-jwt-for-authentication-1397211fb97c)
+- [Devise + Rails API Session Bug](https://github.com/waiting-for-dev/devise-jwt/issues/235)
+- [Devise JWT](https://github.com/waiting-for-dev/devise-jwt/blob/main/README.md)
+- `Rails.application.credentials.jwt_secret_key`
 
 ### 🔗 Historical Commands and Dependencies
 
