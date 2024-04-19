@@ -39,7 +39,7 @@ apartments2 = [
     bedrooms: 1,
     bathrooms: 1,
     pets: 'yes',
-    image: 'https://static.wikia.nocookie.net/spongyconstructionproject/images/e/ef/SpongeBob_House.PNG/revision/latest?cb=20230419215158'
+    image: 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/bikini-bottom-spongebob-squarepants-jorge-terrones.jpg'
   },
   {
     street: '742 Evergreen Terrace',
